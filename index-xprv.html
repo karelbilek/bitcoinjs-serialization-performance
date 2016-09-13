@@ -1,0 +1,19 @@
+<div id="info">
+Starting...
+</div>
+
+<script src="bitcoin.js"> </script>
+<script>
+  var HDNode = bitcoin.HDNode;
+
+  var begin = Date.now();
+
+  for (var i = 0; i < 100; i++) {
+      var newNode = HDNode.fromBase58("xprv9xj9UhHNKHr6kJKJBVj82ZxFrbfhczBDUHyVj7kHGAiZqAeUenz2JhrphnMMYVKcWcVPFJESngtKsVa4FYEvFfWUTtZThCoZdwDeS9qQnqm");
+  }
+
+  var end = Date.now();
+
+  var timeSpent = (end - begin) + " ms";
+  document.querySelector("#info").innerHTML = timeSpent;
+</script>
